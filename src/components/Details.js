@@ -148,6 +148,9 @@ function Details() {
       <Background>
         <img src={movie.backgroundImg}></img>
       </Background>
+      <Background2>
+        <div>sss</div>
+      </Background2>
       <MovieTitle>
         <img src={movie.titleImg} />
       </MovieTitle>
@@ -174,15 +177,14 @@ function Details() {
 export default Details;
 
 const Container = styled.div`
-  min-height: calc(100vh - 70px);
-  max-height: 100vh;
   padding: 0 calc(3.5vw + 5px);
+  height: calc(100vh - 70px);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-top: 120px;
+  justify-content:center;
 `;
 
 const Background = styled.div`
@@ -190,8 +192,7 @@ const Background = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.9;
   object-fit: contain;
   img {
@@ -200,9 +201,24 @@ const Background = styled.div`
   }
 `;
 
+const Background2 = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  opacity: 0.7;
+  object-fit: contain;
+  div{
+    width:100vw;
+    height: 110%;
+    backrgound-color:black;
+  }
+`;
+
 const MovieTitle = styled.div`
   img {
-    width: 300px;
+    width: 400px;
     height: auto;
   }
 `;
